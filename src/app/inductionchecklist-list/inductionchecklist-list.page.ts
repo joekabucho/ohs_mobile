@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InductionchecklistService } from '../services/inductionchecklist.service';
+
 
 @Component({
   selector: 'app-inductionchecklist-list',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InductionchecklistListPage implements OnInit {
 
-  constructor() { }
+  inductionData: any;
+
+  constructor(
+      public apiService: InductionchecklistService
+  ) {
+    this.inductionData = [];
+  }
 
   ngOnInit() {
+    this.getAllChecklists();
+  }
+
+  getAllChecklists() {
+    // Get saved list of students
+    this.apiService.getList().subscribe(response => {
+      console.log(response);
+      this.inductionData = response;
+    });
+  }
+
+
+  delete(item) {
+    // Delete item in Student data
+    this.apiService.deleteItem(item._id).subscribe(Response => {
+      // Update list after delete is successful
+      this.getAllChecklists();
+    });
   }
 
 }

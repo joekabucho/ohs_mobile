@@ -1,9 +1,76 @@
+
+<!-- student-create.html -->
 <ion-header>
-  <ion-toolbar>
-    <ion-title>jobcard-create</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Create  Jobcard</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="data.name" placeholder="Enter Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Customer</ion-label>
+    <ion-input [(ngModel)]="data.customer" placeholder="Enter Customer"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Starting Date</ion-label>
+    <ion-datetime [(ngModel)]="data.starting_date" placeholder="Enter Starting Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>End Date</ion-label>
+    <ion-datetime [(ngModel)]="data.end_date" placeholder="Enter End Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Workorder Number</ion-label>
+    <ion-input [(ngModel)]="data.workorder_number" placeholder="Enter Workorder Number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Location Name</ion-label>
+    <ion-input [(ngModel)]="data.location_name" placeholder="Enter Location Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Job Description</ion-label>
+    <ion-input [(ngModel)]="data.job_description" placeholder="Enter Job Description"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Job Steps</ion-label>
+    <ion-textarea [(ngModel)]="data.job_steps" placeholder="Enter Job Steps"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hazards</ion-label>
+    <ion-textarea [(ngModel)]="data.hazards" placeholder="Enter Hazards"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Issue To</ion-label>
+    <ion-input [(ngModel)]="data.issue_to" placeholder="Enter Issue To"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Uncontainable Risks</ion-label>
+    <ion-input [(ngModel)]="data.uncontainable_risks" placeholder="Enter Uncontainable Risks"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Control Measures</ion-label>
+    <ion-input [(ngModel)]="data.control_measures" placeholder="Enter Control Measures"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Controlled Risk Levels</ion-label>
+    <ion-input [(ngModel)]="data.controlled_risk_levels" placeholder="Enter Controlled Risk Levels"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Status</ion-label>
+    <ion-input [(ngModel)]="data.status" placeholder="Enter Status"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Amount Invoiced</ion-label>
+    <ion-input [(ngModel)]="data.amount_invoiced" placeholder="Enter Amount Invoiced"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="submitForm()">Add
+    </ion-button>
+  </ion-item>
 
 </ion-content>

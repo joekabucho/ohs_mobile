@@ -1,9 +1,73 @@
+
+<!-- student-create.html -->
 <ion-header>
-  <ion-toolbar>
-    <ion-title>workpermit-create</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Create Induction Checklist</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Created By</ion-label>
+    <ion-input [(ngModel)]="data.created_by" placeholder="Enter Created By"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Approved By</ion-label>
+    <ion-input [(ngModel)]="data.approver_by" placeholder="Enter Approved By"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Amendments</ion-label>
+    <ion-input [(ngModel)]="data.ammendments" placeholder="Enter Amendments"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Issued By</ion-label>
+    <ion-input [(ngModel)]="data.issued_by" placeholder="Enter Issued By"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Site Name</ion-label>
+    <ion-input [(ngModel)]="data.site_name" placeholder="Enter Site Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Project</ion-label>
+    <ion-input [(ngModel)]="data.project" placeholder="Enter Project"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Technician</ion-label>
+    <ion-input [(ngModel)]="data.technician" placeholder="Enter Technician"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Control Measures</ion-label>
+    <ion-input [(ngModel)]="data.control_measures" placeholder="Enter Control Measures"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Comments</ion-label>
+    <ion-input [(ngModel)]="data.comments" placeholder="Enter Comments"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Valid From</ion-label>
+    <ion-datetime [(ngModel)]="data.valid_from" placeholder="Enter Valid From"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Valid To</ion-label>
+    <ion-datetime [(ngModel)]="data.valid_to" placeholder="Enter Valid To"></ion-datetime>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-button (click)="submitForm()">Add
+    </ion-button>
+  </ion-item>
 
 </ion-content>

@@ -1,9 +1,64 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>inductionchecklist-list</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>List All Induction Checklists</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Checklist Id</th>
+      <th scope="col">Location</th>
+      <th scope="col">Manager</th>
+      <th scope="col">Position</th>
+      <th scope="col">Workplace</th>
+      <th scope="col">Competencies</th>
+      <th scope="col">Permits</th>
+      <th scope="col">Reporting Incidents</th>
+      <th scope="col">Workplace Safety</th>
+      <th scope="col">Safety Work Method</th>
+      <th scope="col">Specialised Equipment</th>
+      <th scope="col">PPE equipment</th>
+      <th scope="col">Assembly Points</th>
+      <th scope="col">Medical Facility</th>
+      <th scope="col" class="text-right">Emergency Services</th>
+      <th scope="col" class="text-right">Emergency Communication</th>
+      <th scope="col" class="text-right">Fire Fighting</th>
+      <th scope="col" class="text-right">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let induction of inductionData">
+      <td>{{induction._id}}</td>
+      <td>{{induction.createdAt}}</td>
+      <td>{{induction.location}}</td>
+      <td>{{induction.manager}}</td>
+      <td>{{induction.position}}</td>
+      <td>{{induction.workplace}}</td>
+      <td>{{induction.permits}}</td>
+      <td>{{induction.reporting_incidents}}</td>
+      <td>{{induction.workplace_safety}}</td>
+      <td>{{induction.safe_work_method}}</td>
+      <td>{{induction.specialised_equipment}}</td>
+      <td>{{induction.ppe_equipment}}</td>
+      <td>{{induction.assembly_points}}</td>
+      <td>{{induction.medical_facility}}</td>
+      <td>{{induction.emergency_services}}</td>
+      <td>{{induction.emergency_communication}}</td>
+      <td>{{induction.firefighting}}</td>
+      <td style="display: flex">
+        <ion-button color="warning" size="small"routerLink='/edit/{{induction._id}}'>
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" size="small" (click)="delete(induction)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <ion-button [routerLink]="['/inductioncreate']">
+    Add Checklist
+  </ion-button>
 </ion-content>

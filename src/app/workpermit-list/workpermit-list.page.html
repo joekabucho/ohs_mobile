@@ -1,9 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>workpermit-list</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>List All Work Permits</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Approved By</th>
+      <th scope="col">Ammendments</th>
+      <th scope="col">Issued By</th>
+      <th scope="col">Site Name</th>
+      <th scope="col">Project</th>
+      <th scope="col">Technician</th>
+      <th scope="col">Comments</th>
+      <th scope="col">Valid From</th>
+      <th scope="col">Valid To</th>
+      <th scope="col">Sent  To</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let workpermit of workpermitData">
+      <td>{{workpermit._id}}</td>
+      <td>{{workpermit.createdAt}}</td>
+      <td>{{workpermit.created_by}}</td>
+      <td>{{workpermit.approver_by}}</td>
+      <td>{{workpermit.ammendments}}</td>
+      <td>{{workpermit.issued_by}}</td>
+      <td>{{workpermit.site_name}}</td>
+      <td>{{workpermit.project}}</td>
+      <td>{{workpermit.Technician}}</td>
+      <td>{{workpermit.comments}}</td>
+      <td>{{workpermit.valid_from}}</td>
+      <td>{{workpermit.valid_to}}</td>
+      <td>{{workpermit.issue_to}}</td>
+      <td style="display: flex">
+        <ion-button color="warning" size="small" routerLink='/edit/{{workpermit._id}}'>
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" size="small" (click)="delete(workpermit)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <ion-button [routerLink]="['/workpermitcreate']">
+    Add Workpermit
+  </ion-button>
 </ion-content>

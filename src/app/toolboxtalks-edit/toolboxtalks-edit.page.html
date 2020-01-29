@@ -1,0 +1,153 @@
+
+<!-- student-create.html -->
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-title>Create Toolbox Talks</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label>Resource Plan</ion-label>
+        <ion-checkbox [(ngModel)]="data.resource_plan" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Necessary Procedure</ion-label>
+        <ion-checkbox [(ngModel)]="data.necessary_proc" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Government Monitor</ion-label>
+        <ion-checkbox [(ngModel)]="data.gov_monitor" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>H2S training</ion-label>
+        <ion-checkbox [(ngModel)]="data.h2s_training" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Hard Hat</ion-label>
+        <ion-checkbox [(ngModel)]="data.hard_hat" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Boots</ion-label>
+        <ion-checkbox [(ngModel)]="data.boots" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Cover Walls</ion-label>
+        <ion-checkbox [(ngModel)]="data.coverwalls" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Hearing Protection</ion-label>
+        <ion-checkbox [(ngModel)]="data.hearing_protection" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Other PPE</ion-label>
+        <ion-checkbox [(ngModel)]="data.other_ppe" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Scope</ion-label>
+        <ion-checkbox [(ngModel)]="data.scope" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Material</ion-label>
+        <ion-checkbox [(ngModel)]="data.material" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Traffic Control</ion-label>
+        <ion-checkbox [(ngModel)]="data.traffic_control" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Mobile Phones</ion-label>
+        <ion-checkbox [(ngModel)]="data.mobile_phones" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Incident Reporting</ion-label>
+        <ion-checkbox [(ngModel)]="data.incident_reporting" ></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Smoking</ion-label>
+        <ion-checkbox [(ngModel)]="data.smoking" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Speed Limits</ion-label>
+        <ion-checkbox [(ngModel)]="data.speed_limits" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>First Aid Kit</ion-label>
+        <ion-checkbox [(ngModel)]="data.first_aid_kit" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Emergency</ion-label>
+        <ion-checkbox [(ngModel)]="data.emergency" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Regulatory Requests</ion-label>
+        <ion-checkbox [(ngModel)]="data.regulatory_requests" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Fire Permit</ion-label>
+        <ion-checkbox [(ngModel)]="data.fire_permit" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Task Hazard</ion-label>
+        <ion-checkbox [(ngModel)]="data.task_hazard" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Site Work Permit</ion-label>
+        <ion-checkbox [(ngModel)]="data.site_work_permit" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Ground disturbance</ion-label>
+        <ion-checkbox [(ngModel)]="data.ground_disturbance" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Other Permit Forms</ion-label>
+        <ion-checkbox [(ngModel)]="data.other_permit_forms" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Fire Extinguisher</ion-label>
+        <ion-checkbox [(ngModel)]="data.fire_extinguishers" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Prestat Check</ion-label>
+        <ion-checkbox [(ngModel)]="data.prestat_check" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Back Up Alarm</ion-label>
+        <ion-checkbox [(ngModel)]="data.back_up_alarm" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Positive Air Shafts</ion-label>
+        <ion-checkbox [(ngModel)]="data.positive_air_shafts" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>People Onboard</ion-label>
+        <ion-checkbox [(ngModel)]="data.people_onboard" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Wall Heads</ion-label>
+        <ion-checkbox [(ngModel)]="data.wall_heads" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Others On Site</ion-label>
+        <ion-checkbox [(ngModel)]="data.others_on_site" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>3rd Party Support</ion-label>
+        <ion-checkbox [(ngModel)]="data.third_party_support" ></ion-checkbox>
+    </ion-item>
+
+
+
+
+    <ion-item>
+        <ion-button (click)="update()" color="success" size="small">
+            Update
+        </ion-button>
+        <ion-button [routerLink]="[ '/toolboxtalkslist']" color="danger" size="small">
+            Cancel
+        </ion-button>
+    </ion-item>
+
+</ion-content>
