@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon> Close
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let toolbox of toolboxData">
+    <ion-card-header>
+      <ion-card-subtitle>{{toolbox.scope}}</ion-card-subtitle>
+      <ion-card-title>{{toolbox.createdAt}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      speed limits:{{toolbox.speed_limits}}
+      <br>resource plan:{{toolbox.resource_plan}}
+      <br>necessary procedure:{{toolbox.necessary_proc}}
+      <br>government monitor:{{toolbox.gov_monitor}}
+      <br>training:{{toolbox.h2s_training}}
+      <br>hard hat:{{toolbox.hard_hat}}
+      <br>boots:{{toolbox.boots}}
+      <br>coverwalls:{{toolbox.coverwalls}}
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

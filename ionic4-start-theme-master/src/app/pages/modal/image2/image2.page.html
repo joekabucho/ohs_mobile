@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon> Close
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let jobcard of jobcardData">
+    <ion-card-header>
+      <ion-card-subtitle>{{jobcard.name}}</ion-card-subtitle>
+      <ion-card-title>{{jobcard.location_name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{jobcard.job_description}}
+      <br>
+      {{jobcard.job_steps}}
+      <br>
+      {{jobcard.hazards}}
+      <br>
+      {{jobcard.uncontainable_risks}}
+      <br>
+      {{jobcard.control_measures}}
+      <br>
+      {{jobcard.controlled_risk_levels}}
+      <br>
+      {{jobcard.status}}
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+        <ion-text color="light">
+          <ion-text color="light" class="fw700">Welcome technician</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    <ion-item lines="none" color="medium">
+   
+      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
+        Location
+        <ion-icon name="locate"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
+     Work permits
+    </ion-button>
+  </ion-card>
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover1"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage2(themeCover)" no-margin>
+   Job cards
+    </ion-button>
+  </ion-card>
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover2"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage1(themeCover)" no-margin>
+  Toolbox talks
+    </ion-button>
+  </ion-card>
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover3"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage3(themeCover)" no-margin>
+   Induction checklist
+    </ion-button>
+  </ion-card>
+  
+
+
+  
+  
+  <popmenu></popmenu>
+</ion-content>
+  

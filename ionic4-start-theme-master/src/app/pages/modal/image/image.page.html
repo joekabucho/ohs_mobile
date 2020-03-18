@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon> Close
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let workpermit of workpermitData">
+    <ion-card-header>
+      <ion-card-subtitle>{{workpermit.site_name}}</ion-card-subtitle>
+      <ion-card-title>{{workpermit.project}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{workpermit.valid_from}}
+      <br>
+      {{workpermit.valid_to}}
+      <br>
+      {{workpermit.ammendments}}
+      <br>
+      {{workpermit.approver_by}}
+      <br>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,95 @@
+<!-- student-create.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Create Incident</ion-title>
+    <ion-button slot="start">
+      <ion-menu-button>
+
+      </ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+ 
+  <ion-item>
+    <ion-label>Serious injury</ion-label>
+    <ion-checkbox [(ngModel)]="data.serious_injury"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Serious incident</ion-label>
+    <ion-checkbox [(ngModel)]="data.serious_incident"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>first aid</ion-label>
+    <ion-checkbox [(ngModel)]="data.first_aid"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>medical aid</ion-label>
+    <ion-checkbox [(ngModel)]="data.medical_aid"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>potentially serious incident</ion-label>
+    <ion-checkbox [(ngModel)]="data.potential_serious"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>production loss</ion-label>
+    <ion-checkbox [(ngModel)]="data.production_loss"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>date reported</ion-label>
+    <ion-datetime [(ngModel)]="data.date_time_reported" placeholder="Enter date reported"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>worker job title</ion-label>
+    <ion-input [(ngModel)]="data.worker_job_title" placeholder="Enter worker job title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date of incident</ion-label>
+    <ion-datetime [(ngModel)]="data.date_of_incident" placeholder="Enter Date of incident"></ion-datetime>
+  </ion-item>
+  <h3>Incident reported to</h3>
+  <ion-item>
+    <ion-label>first aider</ion-label>
+    <ion-checkbox [(ngModel)]="data.first_aider"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Supervisor</ion-label>
+    <ion-checkbox [(ngModel)]="data.supervisor"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Another Worker</ion-label>
+    <ion-checkbox [(ngModel)]="data.another_worker"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>OHS committee member</ion-label>
+    <ion-checkbox [(ngModel)]="data.ohs_committee_member"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>OHS representative</ion-label>
+    <ion-checkbox [(ngModel)]="data.ohs_representative"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Employer</ion-label>
+    <ion-checkbox [(ngModel)]="data.employer"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Prime contractor</ion-label>
+    <ion-checkbox [(ngModel)]="data.prime_contractor"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Any other person</ion-label>
+    <ion-checkbox [(ngModel)]="data.other_person"></ion-checkbox>
+  </ion-item>
+ 
+
+
+
+  <ion-item>
+    <ion-button (click)="submitForm()">Add
+    </ion-button>
+  </ion-item>
+
+</ion-content>
