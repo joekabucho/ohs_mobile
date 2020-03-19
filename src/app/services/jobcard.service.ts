@@ -2,7 +2,7 @@
 //api.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Jobcards } from '../models/jobcards';
+import { Jobcard } from '../models/jobcard';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
  
@@ -43,9 +43,9 @@ export class JobcardService {
 
 
   // Create a new item
-  createItem(item): Observable<Jobcards> {
+  createItem(item): Observable<Jobcard> {
     return this.http
-      .post<Jobcards>(this.base_path, JSON.stringify(item), this.httpOptions)
+      .post<Jobcard>(this.base_path, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -53,9 +53,9 @@ export class JobcardService {
   }
 
   // Get single student data by ID
-  getItem(_id): Observable<Jobcards> {
+  getItem(_id): Observable<Jobcard> {
     return this.http
-      .get<Jobcards>(this.base_path + '/' + _id)
+      .get<Jobcard>(this.base_path + '/' + _id)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -63,9 +63,9 @@ export class JobcardService {
   }
  
   // Get students data
-  getList(): Observable<Jobcards> {
+  getList(): Observable<Jobcard> {
     return this.http
-      .get<Jobcards>(this.base_path)
+      .get<Jobcard>(this.base_path)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -73,9 +73,9 @@ export class JobcardService {
   }
  
   // Update item by id
-  updateItem(_id, item): Observable<Jobcards> {
+  updateItem(_id, item): Observable<Jobcard> {
     return this.http
-      .put<Jobcards>(this.base_path + '/' + _id, JSON.stringify(item), this.httpOptions)
+      .put<Jobcard>(this.base_path + '/' + _id, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -85,7 +85,7 @@ export class JobcardService {
   // Delete item by id
   deleteItem(_id) {
     return this.http
-      .delete<Jobcards>(this.base_path + '/' + _id, this.httpOptions)
+      .delete<Jobcard>(this.base_path + '/' + _id, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

@@ -1,23 +1,48 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { Pages } from './interfaces/pages';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  navigate : any;
+
+  public appPages: Array<Pages>;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public navCtrl: NavController
   ) {
-    this.sideMenu();
+    this.appPages = [
+      {
+        title: 'Home',
+        url: '/home-results',
+        direct: 'root',
+        icon: 'home'
+      },
+      {
+        title: 'About',
+        url: '/about',
+        direct: 'forward',
+        icon: 'information-circle-outline'
+      },
+
+      {
+        title: 'App Settings',
+        url: '/settings',
+        direct: 'forward',
+        icon: 'cog'
+      }
+    ];
+
     this.initializeApp();
   }
 
@@ -25,27 +50,14 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-    });
+    }).catch(() => {});
   }
-  sideMenu()
-  {
-    this.navigate =
-    [
-      {
-        title : "Jobcards",
-        url   : "/jobcardlist",
-        icon  : "home"
-      },
-      {
-        title : "Toolbox talks",
-        url   : "/toolboxtalkslist",
-        icon  : "chatboxes"
-      },
-      {
-        title : "Work permit",
-        url   : "/workpermitlist",
-        icon  : "contacts"
-      },
-    ]
+
+  goToEditProgile() {
+    this.navCtrl.navigateForward('edit-profile');
+  }
+
+  logout() {
+    this.navCtrl.navigateRoot('/');
   }
 }

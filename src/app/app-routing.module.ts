@@ -1,40 +1,26 @@
-
-// app-routing.module.ts
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'jobcardlist', pathMatch: 'full' },
-    // tslint:disable-next-line:max-line-length
-  { path: 'inductioncreate', loadChildren: () => import('./inductionchecklist-create/inductionchecklist-create.module').then(m => m.InductionchecklistCreatePageModule) },
-    // tslint:disable-next-line:max-line-length
-  { path: 'inductiondetail', loadChildren: () => import('./inductionchecklist-detail/inductionchecklist-detail.module').then(m => m.InductionchecklistDetailPageModule) },
-  { path: 'inductionedit/:_id', loadChildren: () => import('./inductionchecklist-edit/inductionchecklist-edit.module').then(m => m.InductionchecklistEditPageModule) },
-  { path: 'inductionlist', loadChildren: () => import('./inductionchecklist-list/inductionchecklist-list.module').then(m => m.InductionchecklistListPageModule) },
+  { path: '', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+  { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
+  { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' },
+  { path: 'edit-profile', loadChildren: './pages/edit-profile/edit-profile.module#EditProfilePageModule' },
+  { path: 'home-results', loadChildren: './pages/home-results/home-results.module#HomeResultsPageModule' },
+  { path: 'incident-create', loadChildren: './pages/incident-create/incident-create.module#IncidentCreatePageModule' },
+  { path: 'toolbox-create', loadChildren: './pages/toolbox-create/toolbox-create.module#ToolboxCreatePageModule' },
+  { path: 'inductionchecklist-create', loadChildren: './pages/inductionchecklist-create/inductionchecklist-create.module#InductionchecklistCreatePageModule' },
 
-  { path: 'jobcardcreate', loadChildren: () => import('./jobcard-create/jobcard-create.module').then(m => m.JobcardCreatePageModule) },
-  { path: 'jobcarddetail', loadChildren: () => import('./jobcard-detail/jobcard-detail.module').then(m => m.JobcardDetailPageModule) },
-  { path: 'jobcardedit/:_id', loadChildren: () => import('./jobcard-edit/jobcard-edit.module').then(m => m.JobcardEditPageModule) },
-  { path: 'jobcardlist', loadChildren: () => import('./jobcard-list/jobcard-list.module').then(m => m.JobcardListPageModule) },
-
-  { path: 'toolboxtalkscreate', loadChildren: () => import('./toolboxtalks-create/toolboxtalks-create.module').then(m => m.ToolboxtalksCreatePageModule) },
-  { path: 'toolboxtalksdetail', loadChildren: () => import('./toolboxtalks-detail/toolboxtalks-detail.module').then(m => m.ToolboxtalksDetailPageModule) },
-  { path: 'toolboxtalksedit/:_id', loadChildren: () => import('./toolboxtalks-edit/toolboxtalks-edit.module').then(m => m.ToolboxtalksEditPageModule) },
-  { path: 'toolboxtalkslist', loadChildren: () => import('./toolboxtalks-list/toolboxtalks-list.module').then(m => m.ToolboxtalksListPageModule) },
-
-  { path: 'workpermitcreate', loadChildren: () => import('./workpermit-create/workpermit-create.module').then(m => m.WorkpermitCreatePageModule) },
-  { path: 'workpermitdetail', loadChildren: () => import('./workpermit-detail/workpermit-detail.module').then(m => m.WorkpermitDetailPageModule) },
-  { path: 'workpermitedit/:_id', loadChildren: () => import('./workpermit-edit/workpermit-edit.module').then(m => m.WorkpermitEditPageModule) },
-  { path: 'workpermitlist', loadChildren: () => import('./workpermit-list/workpermit-list.module').then(m => m.WorkpermitListPageModule) },
-
-
-
+  { path: 'image3', loadChildren: './pages/modal/image3/image3.module#Image3PageModule' },
+  { path: 'image2', loadChildren: './pages/modal/image2/image2.module#Image2PageModule' },
+  { path: 'image1', loadChildren: './pages/modal/image1/image1.module#Image1PageModule' },
+  { path: 'not-allowed', loadChildren: './pages/not-allowed/not-allowed.module#NotAllowedPageModule' },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {}

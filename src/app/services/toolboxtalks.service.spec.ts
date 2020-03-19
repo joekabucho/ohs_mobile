@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ToolboxtalksService } from './toolboxtalks.service';
+import { ToolboxtalkService } from './toolboxtalks.service';
 
 describe('ToolboxtalksService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ToolboxtalksService = TestBed.get(ToolboxtalksService);
+    const service: ToolboxtalkService = TestBed.get(ToolboxtalkService);
     expect(service).toBeTruthy();
   });
 });
