@@ -11,9 +11,7 @@ const routes: Routes = [
   { path: 'incident-create', loadChildren: './pages/incident-create/incident-create.module#IncidentCreatePageModule' },
   { path: 'toolbox-create', loadChildren: './pages/toolbox-create/toolbox-create.module#ToolboxCreatePageModule' },
   { path: 'inductionchecklist-create', loadChildren: './pages/inductionchecklist-create/inductionchecklist-create.module#InductionchecklistCreatePageModule' },
-  { path: 'image1', loadChildren: './modal/image1/image1.module#Image1PageModule' },
-  { path: 'image2', loadChildren: './modal/image2/image2.module#Image2PageModule' },
-  { path: 'image3', loadChildren: './modal/image3/image3.module#Image3PageModule' },
+
   { path: 'image3', loadChildren: './pages/modal/image3/image3.module#Image3PageModule' },
   { path: 'image2', loadChildren: './pages/modal/image2/image2.module#Image2PageModule' },
   { path: 'image1', loadChildren: './pages/modal/image1/image1.module#Image1PageModule' },

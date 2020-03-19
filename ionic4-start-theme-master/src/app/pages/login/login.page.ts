@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { NotificationService } from '../../shared/notification.service';
+import { dev } from '../../config/dev';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-login',
@@ -9,6 +15,31 @@ import { NavController, MenuController, ToastController, AlertController, Loadin
 })
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
+  focus;
+    focus1;
+    focus2;
+    focus3;
+    focus4;
+    focus5;
+
+    email: String;
+    password: String;
+    error: String;
+    notification: boolean;
+    wrongdetails: boolean;
+
+
+    semail: String;
+    spassword: String;
+    srole: String = 'User';
+    sdepartment: String = 'User';
+    sname: String;
+    serror: String;
+    snotification: boolean;
+    swrongdetails: boolean;
+    scode: Number;
+
+    url = dev.connect;
 
   constructor(
     public navCtrl: NavController,
@@ -16,7 +47,9 @@ export class LoginPage implements OnInit {
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private http: HttpClient, private router: Router,
+    private notificationservice: NotificationService
   ) { }
 
   ionViewWillEnter() {
@@ -33,7 +66,137 @@ export class LoginPage implements OnInit {
         Validators.required
       ])]
     });
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.add('register-page');
+
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        console.log("Clicked signup")
+        container.classList.add('right-panel-active');
+    });
+
+    signInButton.addEventListener('click', () => {
+        console.log("Clicked signin")
+        container.classList.remove('right-panel-active');
+    });
   }
+
+signIn() {
+  if (this.email === undefined || this.password === undefined ||
+      this.email === '' || this.password === '' ||
+      this.email == null || this.password == null) {
+
+      this.notification = true;
+      this.wrongdetails = false;
+  } else if (!this.email.includes('@')) {
+      this.error = 'An error occured not a valid email address.';
+      this.wrongdetails = true;
+      this.notification = false;
+  } else if ( !this.email.includes('.')) {
+      this.error = 'An error occured not a valid email addresss .';
+      this.wrongdetails = true;
+      this.notification = false;
+  } else if (this.email.includes('@') && this.email.includes('.')) {
+
+      const payload = {
+          email: this.email,
+          password: this.password
+      };
+
+      this.http.post<any>(this.url + '/api/user/login', payload).subscribe(data => {
+          if (data) {
+            this.saveUserDetails(data);
+              // tslint:disable-next-line:triple-equals
+              this.router.navigateByUrl('home-results');
+        
+          }
+        }, error => {
+         // console.log("An error occured");
+         alert('Login error, you sure you used the right credentials?');
+        }
+        );
+      }
+    }
+
+verify() {
+  const container = document.getElementById('container');
+
+  if (this.semail === undefined || this.spassword === undefined || this.sname === undefined) {
+      this.snotification = true;
+  } else if (!this.semail.includes('@')) {
+      this.error = 'An error occured.';
+      this.swrongdetails = true;
+      this.snotification = false;
+  } else if (!this.semail.includes('.')) {
+      this.error = 'An error occured.';
+      this.swrongdetails = true;
+      this.snotification = false;
+  } else {
+      const payload = {
+          email: this.semail,
+          role: this.srole,
+          password: this.spassword,
+          department: this.sdepartment,
+          name: this.sname,
+
+      };
+
+      this.http.post<any>(this.url + '/api/user/verify', payload).subscribe(data => {
+              if (data) {
+                  // this.toast.success("Use the code sent to your email to finalize the account creation", "Registration Message!");
+                  (document.getElementById('code') as HTMLElement).style.display = 'block';
+                  (document.getElementById('verify') as HTMLElement).style.display = 'none';
+                  (document.getElementById('signup') as HTMLElement).style.display = 'block';
+
+                  alert("Use the code sent to your email to finalize the account creation");
+              }
+          }, error =>{
+              alert("An error occured.");
+              //  (document.getElementById('sger') as HTMLElement).style.display = 'block';
+          }
+      );
+  }
+}
+
+signUp() {
+  const container = document.getElementById('container');
+  if (this.semail === undefined || this.spassword === undefined || this.sname === undefined) {
+      this.snotification = true;
+  } else if (!this.semail.includes('@')) {
+      this.error = 'An error occured.';
+      this.swrongdetails = true;
+      this.snotification = false;
+  } else if (!this.semail.includes('.')) {
+      this.error = 'An error occured.';
+      this.swrongdetails = true;
+      this.snotification = false;
+  } else {
+      const payload = {
+          email: this.semail,
+          role: this.srole,
+          password: this.spassword,
+          department: this.sdepartment,
+          name: this.sname,
+          code : this.scode
+      };
+      console.log(payload);
+
+      this.http.post<any>(this.url + '/api/user/register', payload).subscribe(data => {
+          if (data) {
+              console.log(data);
+              container.classList.remove('right-panel-active');
+          }
+
+      });
+  }
+}
+
+saveUserDetails(user){
+  localStorage.setItem('profile', user._id.toString());
+}
 
   async forgotPass() {
     const alert = await this.alertCtrl.create({
