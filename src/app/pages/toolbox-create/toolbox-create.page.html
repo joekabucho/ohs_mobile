@@ -12,29 +12,31 @@
 </ion-header>
  
 <ion-content padding>
-
+  <h3>Critical H2S Areas</h3>
   <ion-item>
-    <ion-label>Resource Plan</ion-label>
+    <ion-label>Is there a resource Plan</ion-label>
     <ion-checkbox [(ngModel)]="data.resource_plan" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>Necessary Procedure</ion-label>
+    <ion-label>have you taken necessary Precautions</ion-label>
     <ion-checkbox [(ngModel)]="data.necessary_proc" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>Government Monitor</ion-label>
+    <ion-label>Is the presence Gas monitor</ion-label>
     <ion-checkbox [(ngModel)]="data.gov_monitor" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>H2S training</ion-label>
+    <ion-label>have you undergone H2S training</ion-label>
     <ion-checkbox [(ngModel)]="data.h2s_training" ></ion-checkbox>
   </ion-item>
+  <h3>PPE</h3>
+   <p>Tick if these equipment is there ignore if not</p>
   <ion-item>
-    <ion-label>Hard Hat</ion-label>
+    <ion-label>Hard hat and safety glasses</ion-label>
     <ion-checkbox [(ngModel)]="data.hard_hat" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>Boots</ion-label>
+    <ion-label>CSA approved boots</ion-label>
     <ion-checkbox [(ngModel)]="data.boots" ></ion-checkbox>
   </ion-item>
   <ion-item>
@@ -42,19 +44,21 @@
     <ion-checkbox [(ngModel)]="data.coverwalls" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>Hearing Protection</ion-label>
+    <ion-label>Hearing protection,Dusk masks</ion-label>
     <ion-checkbox [(ngModel)]="data.hearing_protection" ></ion-checkbox>
   </ion-item>
   <ion-item>
     <ion-label>Other PPE</ion-label>
     <ion-checkbox [(ngModel)]="data.other_ppe" ></ion-checkbox>
   </ion-item>
+  <h3>Communication</h3>
+  <p>Tick if you have information on the following</p>
   <ion-item>
-    <ion-label>Scope</ion-label>
+    <ion-label>Scope of work</ion-label>
     <ion-checkbox [(ngModel)]="data.scope" ></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label>Material</ion-label>
+    <ion-label>Material Storage and Handling</ion-label>
     <ion-checkbox [(ngModel)]="data.material" ></ion-checkbox>
   </ion-item>
   <ion-item>
@@ -78,6 +82,8 @@
     <ion-label>Speed Limits</ion-label>
     <ion-checkbox [(ngModel)]="data.speed_limits" ></ion-checkbox>
   </ion-item>
+  <h3>First Aid Kits</h3>
+  <p>Tick if the site has the following equipment</p>
   <ion-item>
     <ion-label>First Aid Kit</ion-label>
     <ion-checkbox [(ngModel)]="data.first_aid_kit" ></ion-checkbox>

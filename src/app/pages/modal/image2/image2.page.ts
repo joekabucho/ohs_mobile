@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { JobcardService } from '../../../services/jobcard.service';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-image2',
@@ -16,7 +18,9 @@ export class Image2Page implements OnInit {
   constructor(    private nav: NavController,
     private modalCtrl: ModalController,
     private sanitizer: DomSanitizer,
-      public apiService: JobcardService
+      public apiService: JobcardService,
+      public loadingController: LoadingController,
+      
   ) {
     this.jobcardData = [];
   }
@@ -28,11 +32,16 @@ export class Image2Page implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  getAlljobcards() {
+  async getAlljobcards() {
     // Get saved list of students
+    const loading = await this.loadingController.create({
+      message: 'Loading'
+
+    });
     this.apiService.getList().subscribe(response => {
       console.log(response);
       this.jobcardData = response;
+      loading.dismiss();
     });
   }
 

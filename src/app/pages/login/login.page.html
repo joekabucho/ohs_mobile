@@ -39,7 +39,7 @@
         <ion-input color="secondary"  formControlName="password"  [(ngModel)]="password"
       
      
-        placeholder="Password" (blur)="focus4 = false" (focus)="focus4 = true"
+        (blur)="focus4 = false" (focus)="focus4 = true"
         type="password"></ion-input>
       </ion-item>
       <p ion-text color="warning" class="text08" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">

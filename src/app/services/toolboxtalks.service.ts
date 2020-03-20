@@ -12,7 +12,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class ToolboxTalkService {
  
   // API path
-  base_path = '/api/toolbox_talk';
+  base_path = 'http://54.93.236.71:8000/api/toolbox_talk';
  
   constructor(private http: HttpClient) { }
  

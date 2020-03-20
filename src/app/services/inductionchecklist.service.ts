@@ -12,7 +12,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class InductionchecklistService {
  
   // API path
-  base_path = '/api/induction_checklist';
+  base_path = 'http://54.93.236.71:8000/api/induction_checklist';
  
   constructor(private http: HttpClient) { }
 

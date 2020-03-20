@@ -12,7 +12,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class WorkPermitService {
  
   // API path
-  base_path = '/api/work_permit';
+  base_path = 'http://54.93.236.71:8000/api/work_permit';
 
   constructor(private http: HttpClient) { }
  
