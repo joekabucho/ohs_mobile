@@ -285,6 +285,38 @@ module.exports = [
     "clobbers": [
       "cordova.plugin.http"
     ]
+  },
+  {
+    "id": "cordova-plugin-camera.Camera",
+    "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "Camera"
+    ]
+  },
+  {
+    "id": "cordova-plugin-camera.CameraPopoverOptions",
+    "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "CameraPopoverOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-camera.camera",
+    "file": "plugins/cordova-plugin-camera/www/Camera.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "navigator.camera"
+    ]
+  },
+  {
+    "id": "cordova-plugin-camera.CameraPopoverHandle",
+    "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "CameraPopoverHandle"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -297,7 +329,8 @@ module.exports.metadata =
   "cordova-plugin-ionic-webview": "2.5.3",
   "cordova-plugin-ionic-keyboard": "2.2.0",
   "cordova-plugin-file": "6.0.2",
-  "cordova-plugin-advanced-http": "2.4.1"
+  "cordova-plugin-advanced-http": "2.4.1",
+  "cordova-plugin-camera": "4.1.0"
 };
 // BOTTOM OF METADATA
 });

@@ -13,7 +13,7 @@ export class JobcardService {
 
   // API path
   // tslint:disable-next-line:variable-name
-  base_path = 'http://54.93.236.71:8000/api/jobcard';
+  base_path = 'http://13.59.82.69:8000/api/jobcard';
 
   constructor(private http: HttpClient) { }
 

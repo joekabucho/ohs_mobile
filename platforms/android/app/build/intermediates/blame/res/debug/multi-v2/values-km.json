@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/joe/projects/OHS/ohs_mobile/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "map": [
+                {
+                    "source": "/home/joe/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/956957da93791e77e2a6735db3e6afba/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

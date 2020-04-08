@@ -12,7 +12,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class IncidentService {
  
   // API path
-  base_path = 'http://54.93.236.71:8000/api/incident';
+  base_path = 'http://13.59.82.69:8000/api/incident';
  
   constructor(private http: HttpClient) { }
 

@@ -849,6 +849,10 @@ var map = {
 		"./src/app/pages/home-results/home-results.module.ts",
 		"pages-home-results-home-results-module"
 	],
+	"./pages/image-upload/image-upload.module": [
+		"./src/app/pages/image-upload/image-upload.module.ts",
+		"pages-image-upload-image-upload-module"
+	],
 	"./pages/incident-create/incident-create.module": [
 		"./src/app/pages/incident-create/incident-create.module.ts",
 		"pages-incident-create-incident-create-module"
@@ -887,6 +891,11 @@ var map = {
 	"./pages/toolbox-create/toolbox-create.module": [
 		"./src/app/pages/toolbox-create/toolbox-create.module.ts",
 		"pages-toolbox-create-toolbox-create-module"
+	],
+	"./pages/verification-image/verification-image.module": [
+		"./src/app/pages/verification-image/verification-image.module.ts",
+		"common",
+		"pages-verification-image-verification-image-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -945,6 +954,8 @@ var routes = [
     { path: 'image2', loadChildren: './pages/modal/image2/image2.module#Image2PageModule' },
     { path: 'image1', loadChildren: './pages/modal/image1/image1.module#Image1PageModule' },
     { path: 'not-allowed', loadChildren: './pages/not-allowed/not-allowed.module#NotAllowedPageModule' },
+    { path: 'image-upload', loadChildren: './pages/image-upload/image-upload.module#ImageUploadPageModule' },
+    { path: 'verification-image', loadChildren: './pages/verification-image/verification-image.module#VerificationImagePageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1085,23 +1096,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/modal/image/image.module */ "./src/app/pages/modal/image/image.module.ts");
-/* harmony import */ var _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/modal/image1/image1.module */ "./src/app/pages/modal/image1/image1.module.ts");
-/* harmony import */ var _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/modal/image2/image2.module */ "./src/app/pages/modal/image2/image2.module.ts");
-/* harmony import */ var _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/modal/image3/image3.module */ "./src/app/pages/modal/image3/image3.module.ts");
-/* harmony import */ var _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/modal/search-filter/search-filter.module */ "./src/app/pages/modal/search-filter/search-filter.module.ts");
-/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
+/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
+/* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/ngx/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/modal/image/image.module */ "./src/app/pages/modal/image/image.module.ts");
+/* harmony import */ var _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/modal/image1/image1.module */ "./src/app/pages/modal/image1/image1.module.ts");
+/* harmony import */ var _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/modal/image2/image2.module */ "./src/app/pages/modal/image2/image2.module.ts");
+/* harmony import */ var _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/modal/image3/image3.module */ "./src/app/pages/modal/image3/image3.module.ts");
+/* harmony import */ var _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/modal/search-filter/search-filter.module */ "./src/app/pages/modal/search-filter/search-filter.module.ts");
+/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -1125,26 +1140,28 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_15__["NotificationsComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__["NotificationsComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(),
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["IonicModule"].forRoot(),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_10__["ImagePageModule"],
-                _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_11__["Image1PageModule"],
-                _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_12__["Image2PageModule"],
-                _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_13__["Image3PageModule"],
-                _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_14__["SearchFilterPageModule"]
+                _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_12__["ImagePageModule"],
+                _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_13__["Image1PageModule"],
+                _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_14__["Image2PageModule"],
+                _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_15__["Image3PageModule"],
+                _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_16__["SearchFilterPageModule"]
             ],
-            entryComponents: [_components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_15__["NotificationsComponent"]],
+            entryComponents: [_components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__["NotificationsComponent"]],
             providers: [
-                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"],
-                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"],
-                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicRouteStrategy"], }
+                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__["StatusBar"],
+                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__["SplashScreen"],
+                _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_5__["File"],
+                _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_6__["Camera"],
+                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["IonicRouteStrategy"], }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -2055,7 +2072,7 @@ var InductionchecklistService = /** @class */ (function () {
     function InductionchecklistService(http) {
         this.http = http;
         // API path
-        this.base_path = '/api/induction_checklist';
+        this.base_path = 'http://13.59.82.69:8000/api/induction_checklist';
         // Http Options
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
@@ -2155,7 +2172,7 @@ var JobcardService = /** @class */ (function () {
         this.http = http;
         // API path
         // tslint:disable-next-line:variable-name
-        this.base_path = '/api/jobcard';
+        this.base_path = 'http://13.59.82.69:8000/api/jobcard';
         // Http Options
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
@@ -2253,7 +2270,7 @@ var ToolboxTalkService = /** @class */ (function () {
     function ToolboxTalkService(http) {
         this.http = http;
         // API path
-        this.base_path = '/api/toolbox_talk';
+        this.base_path = 'http://13.59.82.69:8000/api/toolbox_talk';
         // Http Options
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
@@ -2352,7 +2369,7 @@ var WorkPermitService = /** @class */ (function () {
     function WorkPermitService(http) {
         this.http = http;
         // API path
-        this.base_path = '/api/work_permit';
+        this.base_path = 'http://13.59.82.69:8000/api/work_permit';
         // Http Options
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({

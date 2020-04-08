@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'image2', loadChildren: './pages/modal/image2/image2.module#Image2PageModule' },
   { path: 'image1', loadChildren: './pages/modal/image1/image1.module#Image1PageModule' },
   { path: 'not-allowed', loadChildren: './pages/not-allowed/not-allowed.module#NotAllowedPageModule' },
+  { path: 'image-upload', loadChildren: './pages/image-upload/image-upload.module#ImageUploadPageModule' },
+  { path: 'verification-image', loadChildren: './pages/verification-image/verification-image.module#VerificationImagePageModule' },
 ];
 
 @NgModule({

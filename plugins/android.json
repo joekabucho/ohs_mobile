@@ -29,11 +29,14 @@
     "cordova-plugin-advanced-http": {
       "OKHTTP_VERSION": "3.10.0",
       "PACKAGE_NAME": "com.ionictheme.ionic4start"
-    }
-  },
-  "dependent_plugins": {
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.ionictheme.ionic4start"
+    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.ionictheme.ionic4start"
     }
-  }
+  },
+  "dependent_plugins": {}
 }

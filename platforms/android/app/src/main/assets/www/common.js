@@ -96,7 +96,7 @@ var _sPassive,GestureController=function(){function t(t){this.doc=t,this.gesture
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dev", function() { return dev; });
 var dev = {
-    connect: "http://54.93.236.71:8000"
+    connect: "http://13.59.82.69:8000"
 };
 // export const dev = {
 //     connect: 'http://localhost:8000'

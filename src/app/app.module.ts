@@ -4,6 +4,9 @@ import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthServiceService } from './shared/auth-service.service';
+import { File } from '@ionic-native/file/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -43,6 +46,8 @@ import { NotificationsComponent } from './components/notifications/notifications
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy ,}
   ],
   bootstrap: [AppComponent]

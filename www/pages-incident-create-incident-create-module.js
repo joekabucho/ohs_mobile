@@ -186,7 +186,7 @@ var IncidentService = /** @class */ (function () {
     function IncidentService(http) {
         this.http = http;
         // API path
-        this.base_path = '/api/incident';
+        this.base_path = 'http://13.59.82.69:8000/api/incident';
         // Http Options
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
