@@ -1,6 +1,6 @@
-Ionic 4 Start Theme (v1.0.0)
+OHS mobile (v1.0.0)
 ==========
-**Ionic 4 start theme** experiencing the best of new features about this new and definitive release: Angular 7 + Ionic 4 final. 
+**OHS mobile** experiencing the best of new features about this new and definitive release: Angular 7 + Ionic 4 final. 
 
 * Angular 7
 * @ionic/angular 4.0.0
@@ -31,7 +31,7 @@ $ npm install
 $ ionic serve -l
 ```
 
-More about here: [Ionic 4 Start Theme (ionictheme.com)](https://ionictheme.com/ionic4-start-theme-free)
+More about here: [OHS mobile (ionictheme.com)](https://ionictheme.com/ionic4-start-theme-free)
 
 ___
 

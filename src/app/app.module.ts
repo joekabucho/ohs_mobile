@@ -6,6 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthServiceService } from './shared/auth-service.service';
 import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
+import { PusherServiceService } from './services/pusher-service.service';
+import { ChatServiceService } from './services/chat-service.service';
+
+
 
 
 
@@ -47,7 +51,9 @@ import { NotificationsComponent } from './components/notifications/notifications
     StatusBar,
     SplashScreen,
     File,
+    PusherServiceService,
     Camera,
+    ChatServiceService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy ,}
   ],
   bootstrap: [AppComponent]

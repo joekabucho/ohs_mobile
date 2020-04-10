@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'not-allowed', loadChildren: './pages/not-allowed/not-allowed.module#NotAllowedPageModule' },
   { path: 'image-upload', loadChildren: './pages/image-upload/image-upload.module#ImageUploadPageModule' },
   { path: 'verification-image', loadChildren: './pages/verification-image/verification-image.module#VerificationImagePageModule' },
+  { path: 'chatbot', loadChildren: './pages/chatbot/chatbot.module#ChatbotPageModule' },
 ];
 
 @NgModule({

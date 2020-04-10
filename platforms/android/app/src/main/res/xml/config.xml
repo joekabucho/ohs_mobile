@@ -33,8 +33,8 @@
     <feature name="CDVIonicKeyboard">
         <param name="android-package" onload="true" value="io.ionic.keyboard.CDVIonicKeyboard" />
     </feature>
-    <name>Ionic 4 Start Theme</name>
-    <description>Ionic 4 Start Theme</description>
+    <name>OHS mobile</name>
+    <description>OHS mobile</description>
     <author email="firminoata@gmail.com" href="https://ionictheme.com">Ionic Theme</author>
     <content src="index.html" />
     <access origin="*" />
