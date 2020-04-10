@@ -49,13 +49,15 @@
            (focus)="focus = true" ></ion-input>
           </ion-item>
            <ion-item>
-          <ion-input
-           [(ngModel)]="filename"
-           [ngModelOptions]="{standalone: true}"
-           class="form-control"
-           placeholder="Image Name"
-           type="text" (blur)="focus = false"
-           (focus)="focus = true"></ion-input>
+
+           <ion-label style="padding-top: 10px">Site name: </ion-label >
+            <ion-select class="form-control" id="category"  [(ngModel)]="filename"
+            [ngModelOptions]="{standalone: true}"
+            type="text" (blur)="focus = false"
+            (focus)="focus = true"
+            >
+                <ion-select-option *ngFor="let jobcard of jobcardData" [value]="jobcard.name">{{jobcard.name}}</ion-select-option>
+            </ion-select>
        </ion-item>
       <ion-button class="btn btn-primary" id="signup" (click)="upload()" style="width: 140px; margin-left: 40%; margin-bottom: 10px;">Upload</ion-button>
 

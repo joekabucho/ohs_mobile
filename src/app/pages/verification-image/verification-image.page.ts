@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { dev } from '../../config/dev';
 import { HttpClient } from '@angular/common/http';
+import { JobcardService } from '../../services/jobcard.service';
+import { LoadingController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-verification-image',
@@ -19,12 +23,18 @@ export class VerificationImagePage implements OnInit {
 
   url = dev.connect;
 
-  constructor(private http: HttpClient) {
+  jobcardData: any;
+
+
+  constructor(private http: HttpClient,public apiService: JobcardService,   public loadingController: LoadingController
+    ) {
     this.getAllUsers();
     this.getUser();
    }
 
   ngOnInit() {
+    this.getAlljobcards();
+
   }
 
   handleFileInput(files: FileList) {
@@ -62,6 +72,18 @@ export class VerificationImagePage implements OnInit {
   }
   getUser(){
    this.profile = localStorage.getItem('profile');
+  }
+    async getAlljobcards() {
+    // Get saved list of students
+    const loading = await this.loadingController.create({
+      message: 'Loading'
+
+    });
+    this.apiService.getList().subscribe(response => {
+      console.log(response);
+      this.jobcardData = response;
+      loading.dismiss();
+    });
   }
 
 }

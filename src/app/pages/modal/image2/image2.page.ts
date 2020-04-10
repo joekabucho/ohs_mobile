@@ -19,7 +19,7 @@ export class Image2Page implements OnInit {
     private modalCtrl: ModalController,
     private sanitizer: DomSanitizer,
       public apiService: JobcardService,
-      public loadingController: LoadingController,
+      public loadingController: LoadingController
       
   ) {
     this.jobcardData = [];

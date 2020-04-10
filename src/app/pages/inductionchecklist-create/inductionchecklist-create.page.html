@@ -14,19 +14,39 @@
 
   <ion-item>
     <ion-label>Location</ion-label>
-    <ion-input [(ngModel)]="data.location" placeholder="Enter Location"></ion-input>
+
+      <ion-select class="form-control" id="category"  [(ngModel)]="data.location"
+      [ngModelOptions]="{standalone: true}"
+      type="text" (blur)="focus = false"
+      (focus)="focus = true"
+      >
+          <ion-select-option *ngFor="let jobcard of jobcardData" [value]="jobcard.location">{{jobcard.location}}</ion-select-option>
+      </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Manager</ion-label>
-    <ion-input [(ngModel)]="data.manager" placeholder="Enter Manager"></ion-input>
+  
+      <ion-select class="form-control" id="category"  [(ngModel)]="data.manager"
+      [ngModelOptions]="{standalone: true}"
+      type="text" (blur)="focus = false"
+      (focus)="focus = true"
+      >
+          <ion-select-option *ngFor="let user of users" [value]="user.name">{{user.name}}</ion-select-option>
+          </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Position</ion-label>
     <ion-input [(ngModel)]="data.position" placeholder="Enter Position"></ion-input>
-  </ion-item>relative
+  </ion-item>
   <ion-item>
-    <ion-label>Work place</ion-label>
-    <ion-input [(ngModel)]="data.workplace" placeholder="Enter Workplace"></ion-input>
+    <ion-label style="padding-top: 10px">Work place: </ion-label >
+      <ion-select class="form-control" id="category"  [(ngModel)]="data.workplace"
+      [ngModelOptions]="{standalone: true}"
+      type="text" (blur)="focus = false"
+      (focus)="focus = true"
+      >
+          <ion-select-option *ngFor="let jobcard of jobcardData" [value]="jobcard.name">{{jobcard.name}}</ion-select-option>
+      </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>have you checked the competencies and qualification of the inductees</ion-label>
@@ -38,7 +58,7 @@
   </ion-item>
   <ion-item>
     <ion-label>Have you discussed and clearly stated the procedures for reporting incidents injuries and hazards</ion-label>
-    <ion-checkbox [(ngModel)]="datrelativea.reporting_incidents"></ion-checkbox>
+    <ion-checkbox [(ngModel)]="data.reporting_incidents"></ion-checkbox>
   </ion-item>
   <ion-item>
     <ion-label>Have you discussed the workplace safety rules</ion-label>
