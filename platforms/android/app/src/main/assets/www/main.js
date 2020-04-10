@@ -841,6 +841,10 @@ var map = {
 		"./src/app/pages/about/about.module.ts",
 		"pages-about-about-module"
 	],
+	"./pages/chatbot/chatbot.module": [
+		"./src/app/pages/chatbot/chatbot.module.ts",
+		"pages-chatbot-chatbot-module"
+	],
 	"./pages/edit-profile/edit-profile.module": [
 		"./src/app/pages/edit-profile/edit-profile.module.ts",
 		"pages-edit-profile-edit-profile-module"
@@ -859,6 +863,7 @@ var map = {
 	],
 	"./pages/inductionchecklist-create/inductionchecklist-create.module": [
 		"./src/app/pages/inductionchecklist-create/inductionchecklist-create.module.ts",
+		"common",
 		"pages-inductionchecklist-create-inductionchecklist-create-module"
 	],
 	"./pages/login/login.module": [
@@ -956,6 +961,7 @@ var routes = [
     { path: 'not-allowed', loadChildren: './pages/not-allowed/not-allowed.module#NotAllowedPageModule' },
     { path: 'image-upload', loadChildren: './pages/image-upload/image-upload.module#ImageUploadPageModule' },
     { path: 'verification-image', loadChildren: './pages/verification-image/verification-image.module#VerificationImagePageModule' },
+    { path: 'chatbot', loadChildren: './pages/chatbot/chatbot.module#ChatbotPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1098,23 +1104,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/ngx/index.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/modal/image/image.module */ "./src/app/pages/modal/image/image.module.ts");
-/* harmony import */ var _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/modal/image1/image1.module */ "./src/app/pages/modal/image1/image1.module.ts");
-/* harmony import */ var _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/modal/image2/image2.module */ "./src/app/pages/modal/image2/image2.module.ts");
-/* harmony import */ var _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/modal/image3/image3.module */ "./src/app/pages/modal/image3/image3.module.ts");
-/* harmony import */ var _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/modal/search-filter/search-filter.module */ "./src/app/pages/modal/search-filter/search-filter.module.ts");
-/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
+/* harmony import */ var _services_pusher_service_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/pusher-service.service */ "./src/app/services/pusher-service.service.ts");
+/* harmony import */ var _services_chat_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/chat-service.service */ "./src/app/services/chat-service.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/modal/image/image.module */ "./src/app/pages/modal/image/image.module.ts");
+/* harmony import */ var _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/modal/image1/image1.module */ "./src/app/pages/modal/image1/image1.module.ts");
+/* harmony import */ var _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/modal/image2/image2.module */ "./src/app/pages/modal/image2/image2.module.ts");
+/* harmony import */ var _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/modal/image3/image3.module */ "./src/app/pages/modal/image3/image3.module.ts");
+/* harmony import */ var _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/modal/search-filter/search-filter.module */ "./src/app/pages/modal/search-filter/search-filter.module.ts");
+/* harmony import */ var _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/notifications/notifications.component */ "./src/app/components/notifications/notifications.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -1140,28 +1150,30 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__["NotificationsComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"], _components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_19__["NotificationsComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["IonicModule"].forRoot(),
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["IonicModule"].forRoot(),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_13__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_12__["ImagePageModule"],
-                _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_13__["Image1PageModule"],
-                _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_14__["Image2PageModule"],
-                _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_15__["Image3PageModule"],
-                _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_16__["SearchFilterPageModule"]
+                _pages_modal_image_image_module__WEBPACK_IMPORTED_MODULE_14__["ImagePageModule"],
+                _pages_modal_image1_image1_module__WEBPACK_IMPORTED_MODULE_15__["Image1PageModule"],
+                _pages_modal_image2_image2_module__WEBPACK_IMPORTED_MODULE_16__["Image2PageModule"],
+                _pages_modal_image3_image3_module__WEBPACK_IMPORTED_MODULE_17__["Image3PageModule"],
+                _pages_modal_search_filter_search_filter_module__WEBPACK_IMPORTED_MODULE_18__["SearchFilterPageModule"]
             ],
-            entryComponents: [_components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_17__["NotificationsComponent"]],
+            entryComponents: [_components_notifications_notifications_component__WEBPACK_IMPORTED_MODULE_19__["NotificationsComponent"]],
             providers: [
-                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__["StatusBar"],
-                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__["SplashScreen"],
+                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_11__["StatusBar"],
+                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_10__["SplashScreen"],
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_5__["File"],
+                _services_pusher_service_service__WEBPACK_IMPORTED_MODULE_7__["PusherServiceService"],
                 _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_6__["Camera"],
-                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["IonicRouteStrategy"], }
+                _services_chat_service_service__WEBPACK_IMPORTED_MODULE_8__["ChatServiceService"],
+                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["IonicRouteStrategy"], }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -2040,6 +2052,61 @@ var SearchFilterPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/chat-service.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/chat-service.service.ts ***!
+  \**************************************************/
+/*! exports provided: ChatServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatServiceService", function() { return ChatServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _services_pusher_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../services/pusher-service.service */ "./src/app/services/pusher-service.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ChatServiceService = /** @class */ (function () {
+    function ChatServiceService(http, _pusher) {
+        this.http = http;
+        this._pusher = _pusher;
+        this._url = 'http://13.59.82.69:5000';
+        this._channel = this._pusher.getPusher().subscribe('chat-bot');
+    }
+    ChatServiceService.prototype.sendMessage = function (message) {
+        var param = {
+            type: 'human',
+            message: message,
+        };
+        return this.http.post(this._url + "/message", param);
+    };
+    ChatServiceService.prototype.getChannel = function () {
+        return this._channel;
+    };
+    ChatServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _services_pusher_service_service__WEBPACK_IMPORTED_MODULE_2__["PusherServiceService"]])
+    ], ChatServiceService);
+    return ChatServiceService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/inductionchecklist.service.ts":
 /*!********************************************************!*\
   !*** ./src/app/services/inductionchecklist.service.ts ***!
@@ -2232,6 +2299,53 @@ var JobcardService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], JobcardService);
     return JobcardService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/pusher-service.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/pusher-service.service.ts ***!
+  \****************************************************/
+/*! exports provided: PusherServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PusherServiceService", function() { return PusherServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PusherServiceService = /** @class */ (function () {
+    function PusherServiceService(http) {
+        this.http = http;
+        this._pusher = new Pusher("f6eb63f7f95a02f87d40", {
+            cluster: "ap2",
+            encrypted: true
+        });
+    }
+    PusherServiceService.prototype.getPusher = function () {
+        return this._pusher;
+    };
+    PusherServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], PusherServiceService);
+    return PusherServiceService;
 }());
 
 
